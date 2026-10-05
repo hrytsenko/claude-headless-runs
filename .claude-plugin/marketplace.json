@@ -1,0 +1,15 @@
+{
+  "name": "claude-headless-runs",
+  "description": "Headless agent CLI runner plugin.",
+  "owner": {
+    "name": "Anton Hrytsenko",
+    "email": "hrytsenko.anton@gmail.com"
+  },
+  "plugins": [
+    {
+      "source": "./",
+      "name": "headless-run",
+      "description": "Run a prompt and an input through a locally installed agent CLI (Claude Code, Codex, or Antigravity) in headless mode."
+    }
+  ]
+}
