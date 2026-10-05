@@ -1,0 +1,29 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Validate manifests
+        run: claude plugin validate --strict .
+
+      - name: Validate frontmatter
+        run: |
+          for f in skills/*/SKILL.md; do
+            yq --front-matter=extract -e '.name and .description' "$f"
+          done
+
+      - name: Lint scripts
+        run: shellcheck skills/*/scripts/*.sh
