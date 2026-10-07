@@ -33,7 +33,6 @@ if ! output="$(claude --print \
   --permission-prompts none \
   --no-session-persistence \
   "${SCHEMA_ARGS[@]}" \
-  --output-format text \
   <"$INPUT_FILE")"; then
   echo "Error: claude failed." >&2
   printf '%s\n' "$output" >&2

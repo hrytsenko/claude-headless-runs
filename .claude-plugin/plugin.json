@@ -1,6 +1,6 @@
 {
   "name": "headless-run",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Run a prompt and an input through a locally installed agent CLI (Claude Code, Codex, or Antigravity) in headless mode.",
   "author": {
     "name": "Anton Hrytsenko",
